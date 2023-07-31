@@ -1,38 +1,181 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto",Sans-Serif;
+  font-weight: normal;
+  color:#bababa;
+  user-select: none;
+
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    background-image: linear-gradient(rgb(46, 42, 36), rgb(22, 21, 18) 116px);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.app {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.board {
+    width: calc(80px * 8);
+    height: calc(80px * 8);
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.App-link {
-  color: #61dafb;
+.cell {
+    width: 80px;
+    height: 80px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.cell .cell-piece {
+    width: 80px;
+    height:80px;
+    background-repeat:no-repeat;
+    background-position: center;
+    background-size: 80px;
+    z-index: 1000;
+
 }
+
+.cell .cell-piece:hover{
+    cursor: pointer;
+}
+
+.cell .cell-piece:active {
+    cursor: grab;
+}
+
+
+
+.black {
+  background-color: #86a666;
+}
+
+.white {
+    background-color: #ffffdd;
+}
+
+.selected {
+    background-color: rgba(76, 122, 79, 0.7);
+
+}
+
+.available {
+    height: 23px;
+    width: 23px;
+    border-radius: 50%;
+    background-color: rgba(76, 122, 79, 0.7);
+}
+
+.figure-available {
+    height: 80px;
+    width:80px;
+    position: absolute;
+    background-image: radial-gradient(circle at center, transparent 77%, rgba(76, 122, 79, 0.7) 77%);
+}
+
+
+.player-indicator {
+    text-transform: capitalize;
+    position: relative;
+    margin-left: 85px;
+    margin-top: 38px;
+    font-style: italic;
+}
+
+.checkmate {
+    text-transform: capitalize;
+    position: relative;
+    margin-left: 25px;
+    margin-top: 35px;
+    font-style: italic;
+    width: 1000px;
+}
+
+
+.check {
+    height: 80px;
+    width:80px;
+    position: absolute;
+    background-image: radial-gradient(transparent 0%, rgba(232, 10, 35, 0.7) 77%);
+    box-shadow: 0 0 20px rgba(232, 10, 35, 0.7);
+}
+
+
+.timer {
+    position: absolute;
+    margin-left: 950px;
+    font-size: 45px;
+    line-height: 400px;
+}
+
+
+.letter {
+    position: absolute;
+    margin-left: 5px;
+    font-weight: bold;
+}
+.number {
+    position: absolute;
+    font-weight: bold;
+    margin-left: 82px;
+    margin-top: -73px;
+}
+
+.info-table {
+    position: absolute;
+
+    border-radius: 10px;
+    left: 75vw;
+    height: 100px;
+    width: 300px;
+
+
+}
+
+.piece {
+    text-indent: -10px;
+}
+
+.lost {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 19vw;
+    margin-top: -10vw;
+    height: 85px;
+    width: 250px;
+
+
+}
+
+.restart {
+    position: absolute;
+    bottom: 90px;
+    right: 10px;
+    background-color: transparent;
+    width: 100px;
+    height: 50px;
+    text-transform: uppercase;
+    border: 0px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #629924;
+
+}
+
+.restart:hover {
+    background-color: #629924;
+}
+
+
+
+
