@@ -1,1 +1,1 @@
-My first experience of using typescript on React.
+My first experience of using typescript with React.
