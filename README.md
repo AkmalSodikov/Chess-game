@@ -1,1 +1,1 @@
-A deadly combo of my favourite board game and beloved ts ❤️ 
+My first experience of using typescript on React.
